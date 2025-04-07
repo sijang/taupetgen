@@ -1,4 +1,4 @@
-name: diff1
+name: taupetgen
 channels:
   - pytorch
   - nvidia
@@ -284,4 +284,4 @@ dependencies:
     - xformers==0.0.19
     - xxhash==3.2.0
     - yarl==1.8.2
-prefix: /opt/anaconda3/envs/diff1
+prefix: /opt/anaconda3/envs/taupetgen
