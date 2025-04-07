@@ -1,7 +1,7 @@
 import torch
 from PIL import Image
 import numpy as np
-from .utils import download_image, image_grid2, imshow
+from .utils import download_image, image_grid2, imshow, mima
 
 def inferenceFunc(pipe, prompt, base_image, num_inference_steps, image_guidance_scale, guidance_scale, generator):
     edited_image = pipe(prompt, 
@@ -19,7 +19,7 @@ def inferenceFunc(pipe, prompt, base_image, num_inference_steps, image_guidance_
     base_image = Image.fromarray(np.uint8(base_image).squeeze(0).transpose(1, 2, 0)).convert('L')
     return [base_image, edited_image]
 
-def infer_later_mmse(pipe, fileName, image_guidance_scale, guidance_scale, num_inference_steps):
+def infer_later_mmse(pipe, fileName, image_guidance_scale, guidance_scale, num_inference_steps, generator):
     base_image = download_image(fileName)
     mmse_values = [13, 15, 20, 27, 29]
     
@@ -30,7 +30,7 @@ def infer_later_mmse(pipe, fileName, image_guidance_scale, guidance_scale, num_i
         img2 = image_grid2(img1, 1, 2)
         imshow(img2)
 
-def infer_early_mmse(pipe, fileName, image_guidance_scale, guidance_scale, num_inference_steps):
+def infer_early_mmse(pipe, fileName, image_guidance_scale, guidance_scale, num_inference_steps, generator):
     base_image = download_image(fileName)
     mmse_values = [13, 15, 20, 27, 29]
     
