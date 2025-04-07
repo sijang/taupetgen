@@ -50,3 +50,26 @@ fileName = "datasets/tau_later_example.png"
 infer_mr(pipe, fileName, image_guidance_scale, guidance_scale, num_inference_steps, generator)
 
 ```
+
+
+### How to train
+Please complete the config for accelerate
+```python
+accelerate config
+```
+
+```python
+accelerate launch --mixed_precision="fp16"  train_text_to_image-instruct.py \
+  --pretrained_model_name_or_path="runwayml/stable-diffusion-v1-5" \
+  --train_data_dir="datasets" \
+  --use_ema \
+  --resolution=512 \
+  --train_batch_size=4 \
+  --gradient_accumulation_steps=4 \
+  --max_train_steps=1000\
+  --learning_rate=1e-04 \
+  --max_grad_norm=1 \
+  --lr_scheduler="constant" \
+  --lr_warmup_steps=0 \
+  --output_dir="train_save"
+```
