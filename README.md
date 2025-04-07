@@ -13,7 +13,7 @@ This repository contains code for generating tau PET images using a custom Stabl
 conda env create -f environment.yml
 ```
 
-### How to use
+### How to do inference
 
 ```python
 # Cell 1: Imports and setup
