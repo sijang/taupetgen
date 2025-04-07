@@ -30,13 +30,13 @@ def infer_later_mmse(pipe, fileName, image_guidance_scale, guidance_scale, num_i
         img2 = image_grid2(img1, 1, 2)
         imshow(img2)
 
-def infer_early_mmse(pipe, fileName, image_guidance_scale, guidance_scale, num_inference_steps, generator):
+
+def infer_mr(pipe, fileName, image_guidance_scale, guidance_scale, num_inference_steps, generator):
     base_image = download_image(fileName)
-    mmse_values = [13, 15, 20, 27, 29]
     
-    for mmse in mmse_values:
-        prompt = f"Make it in a tau image with early stage, mmse {mmse}"
-        img1 = inferenceFunc(pipe, prompt, base_image, 
-                           num_inference_steps, image_guidance_scale, guidance_scale, generator)
-        img2 = image_grid2(img1, 1, 2)
-        imshow(img2)
+    # for mmse in mmse_values:
+    prompt = f"Make it in a mr image"
+    img1 = inferenceFunc(pipe, prompt, base_image, 
+                       num_inference_steps, image_guidance_scale, guidance_scale, generator)
+    img2 = image_grid2(img1, 1, 2)
+    imshow(img2)
