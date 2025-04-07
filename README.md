@@ -37,13 +37,13 @@ pipe, generator = setup_model(device=device)
 image_guidance_scale = 1.5
 guidance_scale = 2
 num_inference_steps = 10
-fileName = "example/mr_example1.png"
+fileName = "datasets/mr_example1.png"
 
 # Cell 3: Run inference
 # Generate images for later stage
 infer_later_mmse(pipe, fileName, image_guidance_scale, guidance_scale, num_inference_steps, generator)
 
-fileName = "example/tau_later_example.png"
+fileName = "datasets/tau_later_example.png"
 
 # Cell 4: Run inference
 # Generate images for later stage
