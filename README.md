@@ -42,4 +42,11 @@ fileName = "example/mr_example1.png"
 # Cell 3: Run inference
 # Generate images for later stage
 infer_later_mmse(pipe, fileName, image_guidance_scale, guidance_scale, num_inference_steps, generator)
+
+fileName = "example/tau_later_example.png"
+
+# Cell 4: Run inference
+# Generate images for later stage
+infer_mr(pipe, fileName, image_guidance_scale, guidance_scale, num_inference_steps, generator)
+
 ```
