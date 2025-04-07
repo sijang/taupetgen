@@ -1,5 +1,5 @@
 import torch
-from CustomInstructPix2Pix import StableDiffusionInstructPix2PixPipeline_SI
+from .CustomInstructPix2Pix import StableDiffusionInstructPix2PixPipeline_SI
 
 def setup_model(model_id="sijang/taupetgen", device="cuda:0"):
     pipe = StableDiffusionInstructPix2PixPipeline_SI.from_pretrained(
