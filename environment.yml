@@ -281,7 +281,7 @@ dependencies:
     - typing-inspect==0.8.0
     - tzdata==2023.3
     - werkzeug==2.2.3
-    - xformers==0.0.19.dev516
+    - xformers==0.0.19
     - xxhash==3.2.0
     - yarl==1.8.2
 prefix: /opt/anaconda3/envs/diff1
